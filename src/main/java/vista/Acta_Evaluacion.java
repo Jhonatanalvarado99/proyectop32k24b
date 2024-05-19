@@ -12,6 +12,7 @@ import controlador.ActaEvaluacion;
 import controlador.clsUsuarioConectado;
 import java.awt.HeadlessException;
 import controlador.clsBitacora;
+import java.awt.Dimension;
 
 import javax.swing.JOptionPane;
 
@@ -126,7 +127,7 @@ public class Acta_Evaluacion extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtMaestros, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
                                         .addComponent(txtCarrera)))))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +150,7 @@ public class Acta_Evaluacion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(txtSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptar)
                     .addComponent(jButton2))
@@ -177,7 +178,7 @@ public class Acta_Evaluacion extends javax.swing.JFrame {
                 maestroAConsultar = maestroDAO.query(maestroAConsultar);
 
                 if (txtCarrera.getText().equals(maestroAConsultar.getCodigo_carrera()) && txtMaestros.getText().equals(maestroAConsultar.getCodigo_maestro()) && txtSeccion.getText().equals(maestroAConsultar.getCodigo_seccion()) && txtCurso.getText().equals(maestroAConsultar.getCodigo_curso())) {
-                    JOptionPane.showMessageDialog(null, "Bienvenido al SISTEMA\n", "Mensaje de bienvenida", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Bienvenido al Ingreso de Notas\n", "Datos Validados", JOptionPane.INFORMATION_MESSAGE);
                     // registrando usuario conectado
                    // clsUsuarioConectado usuarioRegistrado = new clsUsuarioConectado();
                    // usuarioRegistrado.setIdUsuario(maestroAConsultar.getId_usuario());
@@ -186,17 +187,19 @@ public class Acta_Evaluacion extends javax.swing.JFrame {
                     Auditoria.setIngresarBitacora(clsUsuarioConectado.getIdUsuario(), codigoAplicacion, "LOGAUD");
                     MdiGeneral menuGeneral = new MdiGeneral();
                     //menuGeneral.setVisible(true);
+                    ProcesoIngresoNotas menuIngresoNotas = new ProcesoIngresoNotas();
+                    menuIngresoNotas.setVisible(true);
                     this.dispose();
 
                 } else {
-                    JOptionPane.showMessageDialog(this, "ERROR, VALORES INCORRECTOS", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "ERROR, DATOS INCORRECTOS", "ERROR", JOptionPane.ERROR_MESSAGE);
                     txtCarrera.setText("");
                     txtMaestros.setText("");
                     txtCurso.setText("");
                     txtSeccion.setText("");
                 }
             } catch (HeadlessException e) {
-                JOptionPane.showMessageDialog(this, "ERROR AVALORES INCORRECTOS", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "ERROR DATOS INCORRECTOS", "ERROR", JOptionPane.ERROR_MESSAGE);
                 txtCarrera.setText("");
                     txtMaestros.setText("");
                     txtCurso.setText("");

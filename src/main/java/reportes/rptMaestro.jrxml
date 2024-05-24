@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7eff65d7-8834-4755-9166-dffa344878c6">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7eff65d7-8834-4755-9166-dffa344878c6">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -33,12 +33,8 @@
 	</background>
 	<title>
 		<band height="70" splitType="Stretch">
-			<image>
-				<reportElement x="-20" y="0" width="595" height="64" uuid="ef1bf00f-de2f-44af-a103-20efdb22af48"/>
-				<imageExpression><![CDATA["wood.jpg"]]></imageExpression>
-			</image>
 			<staticText>
-				<reportElement style="Title" x="0" y="6" width="555" height="33" uuid="8bced6ae-1751-4f52-8a54-34efc4b72aea"/>
+				<reportElement style="Title" x="0" y="6" width="555" height="33" forecolor="#000000" uuid="8bced6ae-1751-4f52-8a54-34efc4b72aea"/>
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[Universidad Mariano Galvez de Guatemala]]></text>
 			</staticText>
@@ -47,6 +43,16 @@
 				<textElement textAlignment="Right"/>
 				<text><![CDATA[Reporte de Maestros]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="184" y="50" width="155" height="20" uuid="5f0b7539-bba1-4f98-92ef-24de518f127e"/>
+				<textElement>
+					<font fontName="Arial Black" size="13"/>
+				</textElement>
+				<text><![CDATA[Reporte de Maestros]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="69" width="555" height="1" uuid="cfe5e07a-180a-40d3-a4be-c895edafb7ed"/>
+			</line>
 		</band>
 	</title>
 	<pageHeader>
@@ -102,6 +108,9 @@
 				</textElement>
 				<text><![CDATA[Estatus]]></text>
 			</staticText>
+			<line>
+				<reportElement x="0" y="35" width="555" height="1" uuid="50ad49de-5f09-4629-9efe-ed4047bce150"/>
+			</line>
 		</band>
 	</columnHeader>
 	<detail>
